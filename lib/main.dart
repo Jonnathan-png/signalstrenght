@@ -40,11 +40,7 @@ class _MyAppState extends State<MyApp> {
     positionStream =
         Geolocator.getPositionStream(locationSettings: locationOptions)
             .listen((Position position) {
-      print(position == null
-          ? 'Unknown'
-          : position.latitude.toString() +
-              ', ' +
-              position.longitude.toString());
+
       if (position != null) {
         setState(() {
           lat = position.latitude.toStringAsFixed(9);
@@ -87,7 +83,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         //appBar: Barra superior (Titulo)
         appBar: AppBar(
-          title: const Text('dB mobile LDO'),
+          title: const Text('signal Strenght'),
           backgroundColor: Colors.redAccent,
         ),
         body: Align(
